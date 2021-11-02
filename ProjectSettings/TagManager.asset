@@ -49,3 +49,6 @@ TagManager:
   - name: Terrain
     uniqueID: 3446685459
     locked: 0
+  - name: ControlButtons
+    uniqueID: 1183862295
+    locked: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static int GlobalEvent=0;
+    public static bool GlobalEventJump=false;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private BoxCollider2D coll;
@@ -31,10 +33,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
+        dirX = GlobalEvent;//Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX*moveSpeed, rb.velocity.y);
         //Debug.Log("Horizontal "+ dirX.ToString());
-        if(Input.GetButtonDown("Jump") && IsGrounded())
+        //if(Input.GetButtonDown("Jump") && IsGrounded())
+        if(GlobalEventJump && IsGrounded())
         {
             jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
