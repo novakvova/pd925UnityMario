@@ -9,6 +9,9 @@ public class CameraContorller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerMovement.GlobalEvent = (int)Input.GetAxisRaw("Horizontal");
+        PlayerMovement.GlobalEventJump = Input.GetButtonDown("Jump");
+
         transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
     }
 }
